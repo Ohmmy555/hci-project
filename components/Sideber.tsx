@@ -34,7 +34,7 @@ function Sideber() {
     "rotate-180": toggleCollapse,
   })
 
-  const getNavItemClasses = (menu) => {
+  const getNavItemClasses = ({menu}:{menu:any}) => {
     return classNames("flex items-center cursor-pointer hover:bg-light-lighter rounded w-full overflow-hidden whitespace-nowrap",
     {
       ['bg-light-lighter']:activeMenu?.id === menu.id,
@@ -66,7 +66,7 @@ function Sideber() {
 
 <div className='flex flex-col items-start mt-10'>
 {menuItems.map(({ icon: Icon,...menu}) => {
-  const classes = getNavItemClasses (menu)
+  const classes = getNavItemClasses ({menu})
 return(
   <div className={classes}>
     <Link href={menu.link}>
