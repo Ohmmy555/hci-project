@@ -1,7 +1,12 @@
-import React, { Children } from 'react'
 import Sideber from './Sideber'
+import React, { ReactNode } from "react";
 
-function Layout({ children }) {
+interface Props {
+    children?: ReactNode
+    // any props that come into the component
+}
+
+function Layout({ children }:{children:any}) {
   return (
 
     <div className='h-screen flex flex-row justify-start'>
